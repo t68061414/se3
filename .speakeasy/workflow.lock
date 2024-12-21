@@ -1,0 +1,34 @@
+speakeasyVersion: 1.459.2
+sources:
+    petstore-oas:
+        sourceNamespace: petstore-oas
+        sourceRevisionDigest: sha256:6b340b768fa9fe0e5a09371730a08bb46310c19316f66a8a164b536463a692a3
+        sourceBlobDigest: sha256:c4af72da0a5010df96179128e18081d3032fee2c90f89465b0861d8abdfbfc79
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    petstore:
+        source: petstore-oas
+        sourceNamespace: petstore-oas
+        sourceRevisionDigest: sha256:6b340b768fa9fe0e5a09371730a08bb46310c19316f66a8a164b536463a692a3
+        sourceBlobDigest: sha256:c4af72da0a5010df96179128e18081d3032fee2c90f89465b0861d8abdfbfc79
+        codeSamplesNamespace: petstore-oas-python-code-samples
+        codeSamplesRevisionDigest: sha256:aff137d0ccc97811eed59f71a50eb364a8cfcbebf51ede8158c50e42c373e8be
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        petstore-oas:
+            inputs:
+                - location: openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/test-company/ws3/petstore-oas
+    targets:
+        petstore:
+            target: python
+            source: petstore-oas
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/test-company/ws3/petstore-oas-python-code-samples
+                blocking: false

@@ -6,6 +6,9 @@ permissions:
   statuses: write
   id-token: write
 "on":
+  push:
+    branches:
+      - main  # Modify this with the branch(es) you want the workflow to run on push
   workflow_dispatch:
     inputs:
       force:
@@ -13,7 +16,7 @@ permissions:
         type: boolean
         default: false
       set_version:
-        description: optionally set a specific SDK version
+        description: Optionally set a specific SDK version
         type: string
   schedule:
     - cron: 0 0 * * *

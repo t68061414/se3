@@ -6,9 +6,6 @@ permissions:
   statuses: write
 
 "on":
-  push:
-    branches:
-      - main  # Modify this with the branch(es) you want the workflow to run on push
   workflow_dispatch:
     inputs:
       force:
